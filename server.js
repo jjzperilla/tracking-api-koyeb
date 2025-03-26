@@ -19,9 +19,9 @@ app.get("/api/track", async (req, res) => {  // 👈 Ensure the route starts wit
     let browser;
 
     try {
-       browser = await puppeteer.launch({
-    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || require('puppeteer').executablePath(),
-    headless: "new",
+const browser = await puppeteer.launch({
+    executablePath: "/home/koyeb/.cache/puppeteer/chrome/linux-134.0.6998.35/chrome-linux64/chrome",
+    headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"]
 });
 
