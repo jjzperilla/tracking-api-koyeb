@@ -10,7 +10,7 @@
     "puppeteer-extra-plugin-stealth": "^2.11.1"
   },
   "scripts": {
-    "postinstall": "npx puppeteer browsers install chrome",
+     "postinstall": "PUPPETEER_CACHE_DIR=/app/.cache/puppeteer npx puppeteer browsers install chrome",
     "start": "node server.js"
   }
 }
