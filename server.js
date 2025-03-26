@@ -18,7 +18,9 @@ app.get("/api/track", async (req, res) => {  // 👈 Ensure the route starts wit
     const url = `https://parcelsapp.com/en/tracking/${trackingNumber}`;
 
     let browser;
-
+(async () => {
+  console.log("Puppeteer default Chrome path:", puppeteer.executablePath());
+})();
     try {
 const browser = await puppeteer.launch({
     executablePath: chromiumPath,
