@@ -2,6 +2,7 @@ const express = require("express");
 const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const cors = require("cors");
+const chromiumPath = require("puppeteer").executablePath();
 
 puppeteer.use(StealthPlugin());
 
@@ -20,7 +21,7 @@ app.get("/api/track", async (req, res) => {  // 👈 Ensure the route starts wit
 
     try {
 const browser = await puppeteer.launch({
-    executablePath: "/usr/bin/chromium",
+    executablePath: chromiumPath,
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"]
 });
