@@ -14,7 +14,8 @@ app.get("/api/track", async (req, res) => {  // 👈 Ensure the route starts wit
         return res.status(400).json({ error: "Tracking number is required" });
     }
 
-    const url = https://parcelsapp.com/en/tracking/${trackingNumber};
+    const url = `https://parcelsapp.com/en/tracking/${trackingNumber}`;
+
     let browser;
 
     try {
